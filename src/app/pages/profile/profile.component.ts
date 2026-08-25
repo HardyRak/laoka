@@ -9,6 +9,7 @@ import { allergies } from '../../types/allergy.type';
 import { healthConstraints } from '../../types/health-constraint.type';
 import { RadioOptionCardComponent } from '../../component/radio-option-card/radio-option-card.component';
 import { PillButtonComponent } from '../../component/pill-button/pill-button.component';
+import { DisclaimerComponent } from '../../component/disclaimer/disclaimer.component';
 
 @Component({
   selector: 'app-profile',
@@ -22,6 +23,7 @@ import { PillButtonComponent } from '../../component/pill-button/pill-button.com
     ChoiceChipComponent,
     RadioOptionCardComponent,
     PillButtonComponent,
+    DisclaimerComponent,
   ],
 })
 export class ProfileComponent implements OnInit {
