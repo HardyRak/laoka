@@ -1,0 +1,51 @@
+:host {
+  --tn-color-inactive: #9CA0A6;
+  --tn-color-active: #1E7A5F;
+  --tn-bg: #FFFEFB;
+}
+
+.tab-navigation {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  background: var(--tn-bg);
+  padding: 20px 16px;
+  width: 100%;
+  box-sizing: border-box;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--tn-color-inactive);
+    padding: 0;
+    font-family: inherit;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__label {
+    font-size: 13px;
+    font-weight: 600;
+    color: inherit;
+  }
+
+  &__item--active {
+    color: var(--tn-color-active);
+  }
+}

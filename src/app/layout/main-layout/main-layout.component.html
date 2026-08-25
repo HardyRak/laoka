@@ -1,0 +1,12 @@
+<div class="main-layout">
+  <app-header [userName]="'Christophe'"></app-header>
+
+  <div class="main-layout__content">
+    <ion-router-outlet></ion-router-outlet>
+  </div>
+
+  <app-tab-navigation
+    [activeTabId]="activeTabId()"
+    (tabPressed)="onTabPressed($event)"
+  ></app-tab-navigation>
+</div>

@@ -1,0 +1,58 @@
+:host {
+  --h-color-brand: #1E7A5F;
+  --h-color-avatar-bg: #DDEAC9;
+  --h-color-avatar-text: #2B2B2B;
+  --h-color-title: #24292B;
+  --h-bg: #FAF9F3;
+  display: block;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--h-bg);
+  padding: 18px 20px;
+  box-sizing: border-box;
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--h-color-brand);
+    color: #fff;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--h-color-title);
+  }
+
+  &__avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--h-color-avatar-bg);
+    color: var(--h-color-avatar-text);
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
