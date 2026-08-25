@@ -1,0 +1,37 @@
+<button
+  type="button"
+  class="choice-chip"
+  [class.choice-chip--danger]="selected() && tone() === 'danger'"
+  [class.choice-chip--success]="selected() && tone() === 'success'"
+  (click)="onClick()"
+>
+  <span class="choice-chip__emoji">{{ emoji() }}</span>
+  <span class="choice-chip__label">{{ field() }}</span>
+
+  <svg
+    *ngIf="selected() && tone() === 'danger'"
+    class="choice-chip__icon"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M18 6 6 18" />
+    <path d="M6 6l12 12" />
+  </svg>
+
+  <svg
+    *ngIf="selected() && tone() === 'success'"
+    class="choice-chip__icon"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M20 6 9 17l-5-5" />
+  </svg>
+</button>
