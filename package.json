@@ -11,7 +11,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "format": "prettier . --write",
-    "format:check": "prettier . --check"
+    "format:check": "prettier . --check",
+    "android:build": "ionic build && npx cap sync android",
+    "android:run": "npm run android:build && npx cap run android",
+    "android:open": "npm run android:build && npx cap open android",
+    "android": "npm run android:run"
   },
   "private": true,
   "dependencies": {
