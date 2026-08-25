@@ -73,12 +73,23 @@
 
 .group__content {
   display: flex;
-  flex-wrap: wrap;
   align-content: flex-start;
   gap: 16px;
   overflow-y: auto;
+  overflow-x: hidden;
   padding-right: 8px;
   margin-right: -8px;
+
+  // Par défaut : mode "chips" → alignement horizontal simple.
+  // Chaque chip garde la largeur de son contenu et redescend
+  // naturellement à la ligne suivante quand la place manque
+  // (pas de colonnes forcées, pas de grid).
+  flex-flow: row wrap;
+
+  // Mode "list" → empilement vertical (ex: radios), pleine largeur.
+  &--list {
+    flex-flow: column nowrap;
+  }
 
   // Thin, unobtrusive scrollbar (WebKit)
   &::-webkit-scrollbar {
@@ -101,12 +112,18 @@
   // Firefox
   scrollbar-width: thin;
   scrollbar-color: #d8ddd2 transparent;
-}
 
-// Chips/radios projected into the content slot each take roughly
-// half the row width, matching the two-column wrap in the design,
-// while still shrinking to their content and wrapping naturally.
-::ng-deep .group__content > * {
-  flex: 1 1 calc(50% - 8px);
-  min-width: 260px;
+  // Mode "chips" : chaque item ne prend que la largeur nécessaire
+  // à son contenu, sans jamais dépasser la largeur du conteneur.
+  &:not(&--list) > ::ng-deep * {
+    flex: 0 1 auto;
+    width: auto;
+    max-width: 100%;
+  }
+
+  // Mode "list" : chaque item prend toute la largeur disponible.
+  &--list > ::ng-deep * {
+    flex: 0 0 auto;
+    width: 100%;
+  }
 }

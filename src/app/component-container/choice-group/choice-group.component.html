@@ -12,7 +12,11 @@
     </div>
   </header>
 
-  <div class="group__content" [style.max-height]="maxHeight()">
+  <div
+    class="group__content"
+    [class.group__content--list]="layout() === 'list'"
+    [style.max-height]="maxHeight()"
+  >
     <ng-content></ng-content>
   </div>
 </div>

@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export type ChoiceGroupTone = 'danger' | 'neutral' | 'success';
+export type ChoiceGroupLayout = 'chips' | 'list';
 
 @Component({
   selector: 'app-choice-group',
@@ -23,6 +24,13 @@ export class ChoiceGroupComponent {
 
   /** Color theme of the icon badge */
   tone = input<ChoiceGroupTone>('danger');
+
+  /**
+   * Visual arrangement of the projected items:
+   * - 'chips' → grille horizontale 2 colonnes (multi-select, ex: accompagnements)
+   * - 'list'  → empilement vertical 1 colonne (radios, ex: contrainte de santé)
+   */
+  layout = input<ChoiceGroupLayout>('chips');
 
   /** Max height of the content area before it scrolls (CSS value, e.g. "360px") */
   maxHeight = input<string>('360px');
