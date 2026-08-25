@@ -2,15 +2,37 @@
   display: inline-block;
   margin: 0;
   padding: 0;
+
+  --btn-green: #1c6b4f;
+  --btn-green-hover: #175a42;
+  --btn-green-active: #124a37;
+
+  // Solid variant
+  &.variant-solid {
+    --btn-bg: var(--btn-green);
+    --btn-bg-hover: var(--btn-green-hover);
+    --btn-bg-active: var(--btn-green-active);
+    --btn-border: transparent;
+    --btn-text: #ffffff;
+    --btn-disabled-bg: #a9c4b8;
+    --btn-disabled-border: transparent;
+    --btn-disabled-text: #ffffff;
+  }
+
+  // Outline variant: white bg, pale green border, green text — like "Recalculer avec mes préférences"
+  &.variant-outline {
+    --btn-bg: #ffffff;
+    --btn-bg-hover: #f2f8f0;
+    --btn-bg-active: #e7f1e3;
+    --btn-border: #cfe0c8;
+    --btn-text: var(--btn-green);
+    --btn-disabled-bg: #ffffff;
+    --btn-disabled-border: #e5e9e1;
+    --btn-disabled-text: #b7bfae;
+  }
 }
 
 .pill-btn {
-  --btn-bg: #1c6b4f;
-  --btn-bg-hover: #175a42;
-  --btn-bg-active: #124a37;
-  --btn-text: #ffffff;
-  --btn-disabled-bg: #a9c4b8;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -18,17 +40,26 @@
   width: 100%;
   padding: 18px 32px;
   margin: 0;
-  border: none;
+  border: 1px solid var(--btn-border);
   border-radius: 999px;
   background: var(--btn-bg);
   color: var(--btn-text);
   cursor: pointer;
   font-family: inherit;
-  transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease,
+    box-shadow 0.15s ease;
 
   &:hover:not(:disabled) {
     background: var(--btn-bg-hover);
+  }
+
+  :host(.variant-solid) &:hover:not(:disabled) {
     box-shadow: 0 4px 14px rgba(28, 107, 79, 0.35);
+  }
+
+  :host(.variant-outline) &:hover:not(:disabled) {
+    border-color: var(--btn-green);
   }
 
   &:active:not(:disabled) {
@@ -44,6 +75,8 @@
 
   &:disabled {
     background: var(--btn-disabled-bg);
+    border-color: var(--btn-disabled-border);
+    color: var(--btn-disabled-text);
     cursor: not-allowed;
     box-shadow: none;
   }
@@ -51,7 +84,7 @@
 
 .pill-btn__icon {
   flex: 0 0 auto;
-  color: var(--btn-text);
+  color: currentColor;
 }
 
 .pill-btn__label {
