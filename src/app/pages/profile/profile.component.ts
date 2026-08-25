@@ -4,12 +4,14 @@ import { NameFieldComponent } from '../../component/name-field/name-field.compon
 import { ChoiceGroupComponent } from '../../component-container/choice-group/choice-group.component';
 import { sideDishes } from '../../types/side-dish.type';
 import { ChoiceChipComponent } from '../../component/choice-chip/choice-chip.component';
+import { IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
   imports: [
+    IonContent,
     PageHeaderComponent,
     NameFieldComponent,
     ChoiceGroupComponent,

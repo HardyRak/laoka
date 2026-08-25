@@ -1,17 +1,20 @@
-<div class="content">
-  <app-page-header
-    eyebrow="Vos réglages"
-    title="Mon profil alimentaire"
-    description="Chaque changement recalcule les prochaines propositions."
-  ></app-page-header>
-  <app-name-field [name]="'Camille'"></app-name-field>
-  <app-choice-group title="Accompagnements non aimés" subtitle="5 écartés">
-    @for (item of sideDish; track $index) {
-      <app-choice-chip
-        [emoji]="item.emojy"
-        [field]="item.name"
-        [tone]="'danger'"
-      ></app-choice-chip>
-    }
-  </app-choice-group>
-</div>
+<ion-content>
+  <div class="content">
+    <app-page-header
+      eyebrow="Vos réglages"
+      title="Mon profil alimentaire"
+      description="Chaque changement recalcule les prochaines propositions."
+    ></app-page-header>
+    <app-name-field [name]="'Camille'"></app-name-field>
+    <app-choice-group title="Accompagnements non aimés" subtitle="5 écartés">
+      @for (item of sideDish; track $index) {
+        <app-choice-chip
+          [id]="item.id"
+          [emoji]="item.emojy"
+          [field]="item.name"
+          [tone]="'danger'"
+        ></app-choice-chip>
+      }
+    </app-choice-group>
+  </div>
+</ion-content>
