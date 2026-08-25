@@ -1,0 +1,16 @@
+<div class="page-header">
+  <div class="page-header__top">
+    <span class="page-header__eyebrow">{{ eyebrow() }}</span>
+    @if (date()) {
+      <span class="page-header__date">{{ date() }}</span>
+    }
+  </div>
+
+  <h1 class="page-header__title">{{ title() }}</h1>
+
+  @if (description()) {
+    <p class="page-header__description" *ngIf="">
+      {{ description() }}
+    </p>
+  }
+</div>

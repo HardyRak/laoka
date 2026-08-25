@@ -1,0 +1,44 @@
+:host {
+  display: block;
+}
+
+.page-header {
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  &__eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #1E7A5F;
+  }
+
+  &__date {
+    flex-shrink: 0;
+    background: #EDECE6;
+    color: #4B4F52;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 999px;
+  }
+
+  &__title {
+    margin: 4px 0 0;
+    font-size: 34px;
+    line-height: 1.15;
+    font-weight: 500;
+    color: #24292B;
+  }
+
+  &__description {
+    margin: 8px 0 0;
+    font-size: 15px;
+    color: #8B8F92;
+  }
+}
