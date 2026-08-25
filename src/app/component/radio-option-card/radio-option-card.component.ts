@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,36 +10,35 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     '(click)': 'onClick()',
-    '[class.selected]': 'selected',
+    '[class.selected]': 'selected()',
   },
 })
 export class RadioOptionCardComponent {
   /** Emoji or icon character shown on the left (e.g. "✨") */
-  @Input() emoji = '';
+  emoji = input('');
 
   /** Title of the option (e.g. "Aucune contrainte") */
-  @Input() name = '';
+  name = input('');
 
   /** Subtitle / helper text (e.g. "Une sélection variée et équilibrée") */
-  @Input() description = '';
+  description = input('');
 
   /** Value carried by this option, emitted on selection */
-  @Input() value: unknown;
+  value = input<unknown>();
 
   /** Whether this option is currently the selected one in the radio group */
-  @Input() selected = false;
+  selected = input(false);
 
   /** Disables interaction */
-  @Input() disabled = false;
+  disabled = input(false);
 
   /** Emits the `value` when the card is picked */
-  @Output() selectedChange = new EventEmitter<unknown>();
+  selectedChange = output<unknown>();
 
   onClick(): void {
-    if (this.disabled || this.selected) {
+    if (this.disabled() || this.selected()) {
       return;
     }
-    this.selected = true;
-    this.selectedChange.emit(this.value);
+    this.selectedChange.emit(this.value());
   }
 }
