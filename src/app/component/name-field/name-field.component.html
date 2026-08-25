@@ -1,0 +1,15 @@
+<div class="name-field">
+  <div class="name-field__avatar">{{ initial() }}</div>
+
+  <div class="name-field__body">
+    <label class="name-field__label" for="name-field-input">Prénom</label>
+
+    <input
+      id="name-field-input"
+      class="name-field__input"
+      type="text"
+      [ngModel]="name()"
+      (ngModelChange)="onNameInput($event)"
+    />
+  </div>
+</div>
