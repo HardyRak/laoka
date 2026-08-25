@@ -16,5 +16,36 @@
         ></app-choice-chip>
       }
     </app-choice-group>
+    <app-choice-group
+      title="Allergies"
+      subtitle="Sélection multiple"
+      tone="success"
+      icon="A"
+    >
+      @for (item of allergies; track $index) {
+        <app-choice-chip
+          [id]="item.id"
+          [emoji]="item.emojy"
+          [field]="item.name"
+          [tone]="'success'"
+        ></app-choice-chip>
+      }
+    </app-choice-group>
+    <app-choice-group
+      title="Contrainte de santé"
+      subtitle="Une seule option"
+      tone="neutral"
+      icon="C"
+      layout="list"
+    >
+      @for (item of healthConstraints; track $index) {
+        <app-radio-option-card
+          [id]="item.id"
+          [emoji]="item.emojy"
+          [name]="item.name"
+          [description]="item.description"
+        ></app-radio-option-card>
+      }
+    </app-choice-group>
   </div>
 </ion-content>

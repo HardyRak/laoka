@@ -5,6 +5,9 @@ import { ChoiceGroupComponent } from '../../component-container/choice-group/cho
 import { sideDishes } from '../../types/side-dish.type';
 import { ChoiceChipComponent } from '../../component/choice-chip/choice-chip.component';
 import { IonContent } from '@ionic/angular';
+import { allergies } from '../../types/allergy.type';
+import { healthConstraints } from '../../types/health-constraint.type';
+import { RadioOptionCardComponent } from '../../component/radio-option-card/radio-option-card.component';
 
 @Component({
   selector: 'app-profile',
@@ -16,10 +19,13 @@ import { IonContent } from '@ionic/angular';
     NameFieldComponent,
     ChoiceGroupComponent,
     ChoiceChipComponent,
+    RadioOptionCardComponent,
   ],
 })
 export class ProfileComponent implements OnInit {
   protected sideDish = sideDishes;
+  protected allergies = allergies;
+  protected healthConstraints = healthConstraints;
 
   constructor() {}
 
