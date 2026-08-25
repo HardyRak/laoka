@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { IonRouterOutlet } from '@ionic/angular';
 import { HeaderComponent } from '../../component/header/header.component';
 import { TabNavigationComponent } from '../../component/tab-navigation/tab-navigation.component';
@@ -28,13 +28,17 @@ export class MainLayoutComponent {
     profile: '/profile',
   };
 
-  constructor(private readonly router: Router) {}
+  constructor(private readonly navCtrl: NavController) {}
 
   onTabPressed(tabId: string): void {
     this.activeTabId.set(tabId);
     const route = this.tabRoutes[tabId];
     if (route) {
-      this.router.navigateByUrl(route);
+      // animated: false → changement d'onglet instantané, sans la
+      // transition "push" (slide) qu'Ionic joue par défaut sur une
+      // navigation classique. C'est ce qui donnait l'impression que
+      // l'ancienne page restait affichée pendant que la nouvelle chargeait.
+      this.navCtrl.navigateRoot(route, { animated: false });
     }
   }
 }
