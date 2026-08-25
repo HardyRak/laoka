@@ -1,0 +1,18 @@
+<div class="group">
+  <header class="group__header">
+    <span class="group__badge" [class]="'group__badge--' + tone()">
+      {{ icon() }}
+    </span>
+
+    <div class="group__heading">
+      <h3 class="group__title">{{ title() }}</h3>
+      @if (subtitle()) {
+        <span class="group__subtitle">{{ subtitle() }}</span>
+      }
+    </div>
+  </header>
+
+  <div class="group__content" [style.max-height]="maxHeight()">
+    <ng-content></ng-content>
+  </div>
+</div>
