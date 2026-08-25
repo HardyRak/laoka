@@ -8,6 +8,7 @@ import { IonContent } from '@ionic/angular';
 import { allergies } from '../../types/allergy.type';
 import { healthConstraints } from '../../types/health-constraint.type';
 import { RadioOptionCardComponent } from '../../component/radio-option-card/radio-option-card.component';
+import { PillButtonComponent } from '../../component/pill-button/pill-button.component';
 
 @Component({
   selector: 'app-profile',
@@ -20,6 +21,7 @@ import { RadioOptionCardComponent } from '../../component/radio-option-card/radi
     ChoiceGroupComponent,
     ChoiceChipComponent,
     RadioOptionCardComponent,
+    PillButtonComponent,
   ],
 })
 export class ProfileComponent implements OnInit {
