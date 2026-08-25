@@ -1,1 +1,14 @@
-<p>calendar works!</p>
+<ion-content>
+  <div class="content">
+    <app-page-header
+      eyebrow="Votre rythme"
+      title="Calendrier gourmand"
+      description="Une rotation calculée pour varier naturellement votre assiette."
+    ></app-page-header>
+    <app-month-calendar
+      [month]="8"
+      [year]="2026"
+      [meals]="calendarMeals"
+    ></app-month-calendar>
+  </div>
+</ion-content>

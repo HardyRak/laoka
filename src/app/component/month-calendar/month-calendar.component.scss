@@ -1,0 +1,148 @@
+:host {
+  display: block;
+}
+
+.month-calendar {
+  background: #FFFFFF;
+  border: 1px solid #EDEBE1;
+  border-radius: 24px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    background: #F2F1E9;
+    color: #4B4F52;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    h2 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+      color: #24292B;
+    }
+  }
+
+  &__subtitle {
+    font-size: 13px;
+    color: #9A9E9F;
+  }
+
+  &__weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    margin-bottom: 4px;
+
+    span {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #A7ABAC;
+      padding-bottom: 8px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    border-top: 1px solid #F0EFE7;
+  }
+
+  &__cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 4px 14px;
+    border-right: 1px solid #F0EFE7;
+    border-bottom: 1px solid #F0EFE7;
+    border-top: none;
+    border-left: none;
+    min-height: 96px;
+    min-width: 0;
+    box-sizing: border-box;
+    background: transparent;
+    font-family: inherit;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:disabled {
+      cursor: default;
+    }
+
+    &:nth-child(7n) {
+      border-right: none;
+    }
+
+    &--empty {
+      background: #FAF9F3;
+    }
+  }
+
+  &__day-number {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3A3E3F;
+    line-height: 1;
+
+    &--today {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: #1E4632;
+      color: #fff;
+    }
+  }
+
+  &__meal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+  }
+
+  &__meal-emoji {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  &__meal-label {
+    font-size: 9px;
+    font-weight: 600;
+    color: #8B8F92;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
