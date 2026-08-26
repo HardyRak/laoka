@@ -41,4 +41,8 @@ export class MainLayoutComponent {
       this.navCtrl.navigateRoot(route, { animated: false });
     }
   }
+
+  onProfilePressed(): void {
+    this.onTabPressed('profile');
+  }
 }

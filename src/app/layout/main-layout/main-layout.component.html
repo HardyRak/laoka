@@ -1,5 +1,8 @@
 <div class="main-layout">
-  <app-header [userName]="'Christophe'"></app-header>
+  <app-header
+    [userName]="'Christophe'"
+    (goToProfile)="onProfilePressed()"
+  ></app-header>
 
   <div class="main-layout__content">
     <ion-router-outlet></ion-router-outlet>

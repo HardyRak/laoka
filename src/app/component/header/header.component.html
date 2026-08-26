@@ -1,7 +1,14 @@
 <header class="app-header">
   <div class="app-header__brand">
     <span class="app-header__logo">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <path d="M6 20c8 0 12-4 12-13 0 0-9-1-12 5-2 3-2 5.5 0 8Z" />
         <path d="M6 20c1.5-3 3.5-5.5 6-7.5" />
       </svg>
@@ -9,7 +16,9 @@
     <span class="app-header__title">Tandem</span>
   </div>
 
-  <div class="app-header__avatar" *ngIf="userInitial()">
-    {{ userInitial() }}
-  </div>
+  @if (userInitial()) {
+    <div class="app-header__avatar" (click)="goToProfile.emit()">
+      {{ userInitial() }}
+    </div>
+  }
 </header>
