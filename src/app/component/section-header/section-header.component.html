@@ -1,0 +1,14 @@
+<div class="section-header">
+  <div class="section-header__text">
+    <span class="section-header__eyebrow">{{ eyebrow() }}</span>
+    <h2 class="section-header__title">{{ title() }}</h2>
+  </div>
+
+  <button
+    type="button"
+    class="section-header__link"
+    (click)="onLinkClick()"
+  >
+    {{ linkLabel() }}
+  </button>
+</div>
