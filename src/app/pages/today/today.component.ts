@@ -7,6 +7,8 @@ import { InfoCardComponent } from '../../component/info-card/info-card.component
 import { NextMenusSectionComponent } from '../../component-container/next-menus-section/next-menus-section.component';
 import { sideDishes } from '../../types/side-dish.type';
 import { MealListItemComponent } from '../../component/meal-list-item/meal-list-item.component';
+import { AlertBannerComponent } from '../../component/alert-banner/alert-banner.component';
+import { DisclaimerComponent } from '../../component/disclaimer/disclaimer.component';
 
 @Component({
   selector: 'app-today',
@@ -19,6 +21,7 @@ import { MealListItemComponent } from '../../component/meal-list-item/meal-list-
     InfoCardComponent,
     NextMenusSectionComponent,
     MealListItemComponent,
+    DisclaimerComponent,
   ],
 })
 export class TodayComponent implements OnInit {
