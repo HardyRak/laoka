@@ -1,0 +1,20 @@
+:host {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.meal-list {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #fbfaf5;
+  border: 1px solid #ece9df;
+  overflow: hidden;
+}
+
+// Each projected app-meal-list-item gets a thin divider,
+// except the last one, matching the design.
+::ng-deep .meal-list > *:not(:last-child) {
+  border-bottom: 1px solid #ece9df;
+}
