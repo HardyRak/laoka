@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { DishNutritionStat } from '../../types/dish-nutrition-stat';
+import { IonIcon } from '@ionic/angular';
 
 @Component({
   selector: 'app-dish-of-day-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [IonIcon, CommonModule],
   templateUrl: './dish-of-day-card.component.html',
   styleUrls: ['./dish-of-day-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
