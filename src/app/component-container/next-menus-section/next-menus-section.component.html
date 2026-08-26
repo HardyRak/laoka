@@ -1,0 +1,13 @@
+<div class="next-menus">
+  <app-section-header
+    [eyebrow]="eyebrow()"
+    [title]="title()"
+    [linkLabel]="linkLabel()"
+    (linkClicked)="onLinkClick()"
+  >
+  </app-section-header>
+
+  <app-meal-list>
+    <ng-content></ng-content>
+  </app-meal-list>
+</div>
