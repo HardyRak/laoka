@@ -21,6 +21,7 @@
       eyebrow="La suite"
       title="Prochains menus"
       linkLabel="Voir le mois"
+      (linkClicked)="gotToCalendarPage()"
     >
       @for (meal of nextMenus; track meal.id) {
         <app-meal-list-item
