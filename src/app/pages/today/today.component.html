@@ -17,5 +17,20 @@
       title="Pourquoi ce duo ?"
       text="Ravitoto sy henakisoa apporte déjà environ 29 g de protéines et 31 g de lipides par portion. Riz complet aux herbes complète le plat avec 3.5 g de fibres. Comme le porc couvre bien les protéines et les feuilles apportent fibres, fer et provitamine A, un féculent simple en portion mesurée équilibre l’énergie du repas. Le duo vise une assiette variée sans ajouter inutilement protéines ou matières grasses."
     ></app-info-card>
+    <app-next-menus-section
+      eyebrow="La suite"
+      title="Prochains menus"
+      linkLabel="Voir le mois"
+    >
+      @for (meal of nextMenus; track meal.id) {
+        <app-meal-list-item
+          [emoji]="meal.emojy"
+          [iconBg]="meal.emojy"
+          [title]="meal.name"
+          [subtitle]="'jeu. 27'"
+        >
+        </app-meal-list-item>
+      }
+    </app-next-menus-section>
   </div>
 </ion-content>

@@ -4,6 +4,9 @@ import { PageHeaderComponent } from '../../component/page-header/page-header.com
 import { DishOfDayCardComponent } from '../../component/dish-of-day-card/dish-of-day-card.component';
 import { nutrition } from '../../types/dish-nutrition-stat';
 import { InfoCardComponent } from '../../component/info-card/info-card.component';
+import { NextMenusSectionComponent } from '../../component-container/next-menus-section/next-menus-section.component';
+import { sideDishes } from '../../types/side-dish.type';
+import { MealListItemComponent } from '../../component/meal-list-item/meal-list-item.component';
 
 @Component({
   selector: 'app-today',
@@ -14,10 +17,14 @@ import { InfoCardComponent } from '../../component/info-card/info-card.component
     PageHeaderComponent,
     DishOfDayCardComponent,
     InfoCardComponent,
+    NextMenusSectionComponent,
+    MealListItemComponent,
   ],
 })
 export class TodayComponent implements OnInit {
   nutrition = nutrition;
+
+  nextMenus = sideDishes.slice(0, 3);
 
   constructor() {}
 
