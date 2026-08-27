@@ -1,0 +1,14 @@
+<div class="main-layout">
+  <app-wizard-header [currentStep]="2" [totalSteps]="4"></app-wizard-header>
+
+  <div class="main-layout__content">
+    <ion-router-outlet></ion-router-outlet>
+  </div>
+
+  <app-wizard-footer
+    [showBack]="true"
+    continueLabel="Continuer"
+    continueIcon="arrow-right"
+  >
+  </app-wizard-footer>
+</div>

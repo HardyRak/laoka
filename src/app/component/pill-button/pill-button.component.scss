@@ -7,6 +7,14 @@
   --btn-green-hover: #175a42;
   --btn-green-active: #124a37;
 
+  // Ton "ink" : vert très foncé, utilisé notamment dans le footer de wizard
+  // (couleur exacte samplée sur la maquette : rgb(23,58,47))
+  &.tone-ink {
+    --btn-green: #173a2f;
+    --btn-green-hover: #112b23;
+    --btn-green-active: #0c1f19;
+  }
+
   // Solid variant
   &.variant-solid {
     --btn-bg: var(--btn-green);
@@ -54,12 +62,17 @@
     width: auto;
   }
 
+  :host(.size-sm) & {
+    padding: 14px 24px;
+    gap: 8px;
+  }
+
   &:hover:not(:disabled) {
     background: var(--btn-bg-hover);
   }
 
   :host(.variant-solid) &:hover:not(:disabled) {
-    box-shadow: 0 4px 14px rgba(28, 107, 79, 0.35);
+    box-shadow: 0 4px 14px rgba(23, 58, 47, 0.35);
   }
 
   :host(.variant-outline) &:hover:not(:disabled) {
@@ -89,6 +102,11 @@
 .pill-btn__icon {
   flex: 0 0 auto;
   color: currentColor;
+
+  :host(.size-sm) & {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .pill-btn__label {
@@ -96,4 +114,8 @@
   font-weight: 700;
   line-height: 1;
   white-space: nowrap;
+
+  :host(.size-sm) & {
+    font-size: 15px;
+  }
 }
