@@ -12,7 +12,6 @@ import { PageHeaderComponent } from '../../component/page-header/page-header.com
     IonRouterOutlet,
     WizardFooterComponent,
     WizardHeaderComponent,
-    PageHeaderComponent,
     IonContent,
   ],
 })
