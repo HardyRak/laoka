@@ -1,0 +1,16 @@
+<div class="wizard-footer" [class.wizard-footer--with-back]="showBack()">
+  @if (showBack()) {
+    <app-back-button [label]="backLabel()" (backClicked)="onBack()">
+    </app-back-button>
+  }
+
+  <app-pill-button
+    [label]="continueLabel()"
+    [icon]="continueIcon()"
+    iconPosition="trailing"
+    [fullWidth]="false"
+    [disabled]="continueDisabled()"
+    (pressed)="onContinue()"
+  >
+  </app-pill-button>
+</div>
