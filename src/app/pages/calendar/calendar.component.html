@@ -9,6 +9,7 @@
       [month]="8"
       [year]="2026"
       [meals]="calendarMeals"
+      (dayClick)="onDayClick($event)"
     ></app-month-calendar>
     <app-pill-button
       label="Recalculer avec mes préférences"
@@ -18,3 +19,4 @@
     </app-pill-button>
   </div>
 </ion-content>
+<app-dish-detail-modal #dishModal></app-dish-detail-modal>

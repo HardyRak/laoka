@@ -6,14 +6,23 @@
       (click)="monthChange.emit('prev')"
       aria-label="Mois précédent"
     >
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <path d="M15 18l-6-6 6-6" />
       </svg>
     </button>
 
     <div class="month-calendar__title">
       <h2>{{ monthLabel() }}</h2>
-      <span class="month-calendar__subtitle">{{ plannedDaysCount() }} Jours Planifiés</span>
+      <span class="month-calendar__subtitle"
+        >{{ plannedDaysCount() }} Jours Planifiés</span
+      >
     </div>
 
     <button
@@ -22,7 +31,14 @@
       (click)="monthChange.emit('next')"
       aria-label="Mois suivant"
     >
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <path d="M9 18l6-6-6-6" />
       </svg>
     </button>

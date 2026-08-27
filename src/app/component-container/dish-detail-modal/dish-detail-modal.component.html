@@ -1,0 +1,116 @@
+<ion-modal
+  #modal
+  class="dish-modal-sheet"
+  [initialBreakpoint]="0.85"
+  [breakpoints]="[0, 0.85]"
+  [handle]="true"
+>
+  <ng-template>
+    <div class="dish-modal">
+      <div class="dish-modal__topbar">
+        <span class="dish-modal__date">Jeudi 27 août</span>
+        <button
+          type="button"
+          class="dish-modal__close"
+          (click)="dismiss()"
+          aria-label="Fermer"
+        >
+          ✕
+        </button>
+      </div>
+
+      <ion-content class="dish-modal__content" [scrollY]="true">
+        <div class="dish-modal__hero">
+          <span class="dish-modal__hero-emoji">🍲</span>
+        </div>
+
+        <div class="dish-modal__body">
+          <span class="dish-modal__badge">PLAT DU JOUR · MADAGASCAR</span>
+          <h1 class="dish-modal__title">Ravitoto sy henakisoa</h1>
+          <p class="dish-modal__description">
+            Un grand classique malgache : du porc mijoté lentement avec des
+            feuilles de manioc finement pilées, de l'ail et des aromates.
+          </p>
+
+          <div class="dish-modal__tags">
+            <span class="dish-modal__tag">Porc</span>
+            <span class="dish-modal__tag">Feuilles de manioc pilées</span>
+            <span class="dish-modal__tag">Ail</span>
+          </div>
+
+          <div class="dish-modal__nutrition">
+            <div class="dish-modal__stat">
+              <span class="dish-modal__stat-icon">🍗</span>
+              <div class="dish-modal__stat-text">
+                <span class="dish-modal__stat-value">29 g</span>
+                <span class="dish-modal__stat-label">Protéines</span>
+              </div>
+            </div>
+
+            <div class="dish-modal__stat">
+              <span class="dish-modal__stat-icon">🌿</span>
+              <div class="dish-modal__stat-text">
+                <span class="dish-modal__stat-value">8.2 g</span>
+                <span class="dish-modal__stat-label">Fibres</span>
+              </div>
+            </div>
+
+            <div class="dish-modal__stat">
+              <span class="dish-modal__stat-icon">💧</span>
+              <div class="dish-modal__stat-text">
+                <span class="dish-modal__stat-value">31 g</span>
+                <span class="dish-modal__stat-label">Lipides</span>
+              </div>
+            </div>
+
+            <div class="dish-modal__stat">
+              <span class="dish-modal__stat-icon">🔥</span>
+              <div class="dish-modal__stat-text">
+                <span class="dish-modal__stat-value">522</span>
+                <span class="dish-modal__stat-label">kcal</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dish-modal__side">
+            <span class="dish-modal__side-emoji">🥘</span>
+            <div class="dish-modal__side-text">
+              <span class="dish-modal__side-label">ACCOMPAGNEMENT RECOMMANDÉ</span>
+              <span class="dish-modal__side-title">Boulgour aux petits légumes</span>
+              <span class="dish-modal__side-meta">5.7 g protéines · 5.6 g fibres · 173 kcal</span>
+            </div>
+          </div>
+
+          <div class="dish-modal__info">
+            <span class="dish-modal__info-icon">🛡️</span>
+            <div class="dish-modal__info-text">
+              <span class="dish-modal__info-title">Équilibre nutritionnel</span>
+              <p>
+                Ravitoto sy henakisoa apporte déjà environ 29 g de protéines
+                et 31 g de lipides par portion. Boulgour aux petits légumes
+                complète le plat avec 5.6 g de fibres. Comme le porc couvre
+                bien les protéines et les feuilles apportent fibres, fer et
+                provitamine A, un féculent simple en portion mesurée équilibre
+                l'énergie du repas. Le duo vise une assiette variée sans
+                ajouter inutilement protéines ou matières grasses.
+              </p>
+            </div>
+          </div>
+
+          <p class="dish-modal__disclaimer">
+            Valeurs indicatives par portion : elles varient selon le morceau
+            de porc, la quantité d'huile et la recette familiale. Les
+            feuilles de manioc doivent toujours être correctement pilées et
+            longuement cuites.
+          </p>
+        </div>
+      </ion-content>
+
+      <div class="dish-modal__footer">
+        <button type="button" class="dish-modal__cta" (click)="dismiss()">
+          C'est noté <span>✓</span>
+        </button>
+      </div>
+    </div>
+  </ng-template>
+</ion-modal>

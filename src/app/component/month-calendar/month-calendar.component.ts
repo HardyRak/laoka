@@ -5,7 +5,9 @@ import {
   computed,
   input,
   output,
+  ViewChild,
 } from '@angular/core';
+import { DishDetailModalComponent } from '../../component-container/dish-detail-modal/dish-detail-modal.component';
 
 export interface CalendarMeal {
   /** Jour du mois concerné (1-31) */
@@ -16,7 +18,7 @@ export interface CalendarMeal {
   label: string;
 }
 
-interface CalendarCell {
+export interface CalendarCell {
   day: number | null;
   meal: CalendarMeal | null;
   isToday: boolean;
