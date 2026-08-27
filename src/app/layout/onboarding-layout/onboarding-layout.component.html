@@ -1,9 +1,16 @@
 <div class="main-layout">
   <app-wizard-header [currentStep]="2" [totalSteps]="4"></app-wizard-header>
-
-  <div class="main-layout__content">
-    <ion-router-outlet></ion-router-outlet>
-  </div>
+  <ion-content>
+    <div class="main-layout__content">
+      <app-page-header
+        [eyebrow]="'Vos goûts'"
+        [description]="'Sélectionnez les accompagnements que vous ne voulez jamais voir proposés.'"
+        [title]="'Que laissez-vous au bord de l’assiette ?'"
+      >
+      </app-page-header>
+      <ion-router-outlet></ion-router-outlet>
+    </div>
+  </ion-content>
 
   <app-wizard-footer
     [showBack]="true"
