@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 export type PillButtonVariant = 'solid' | 'outline';
 export type PillButtonIcon = 'check' | 'refresh' | 'arrow-right' | 'none';
 export type PillButtonIconPosition = 'leading' | 'trailing';
+export type PillButtonTone = 'brand' | 'ink';
+export type PillButtonSize = 'md' | 'sm';
 
 @Component({
   selector: 'app-pill-button',
@@ -13,7 +15,7 @@ export type PillButtonIconPosition = 'leading' | 'trailing';
   styleUrls: ['./pill-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[class]': "'variant-' + variant()",
+    '[class]': "'variant-' + variant() + ' tone-' + tone() + ' size-' + size()",
   },
 })
 export class PillButtonComponent {
@@ -22,6 +24,12 @@ export class PillButtonComponent {
 
   /** 'solid': filled green pill (primary action). 'outline': white bg, green border/text (secondary action) */
   variant = input<PillButtonVariant>('solid');
+
+  /** 'brand': green vif (#1c6b4f, défaut). 'ink': vert très foncé (#173a2f), pour les footers de wizard par ex. */
+  tone = input<PillButtonTone>('brand');
+
+  /** 'md': taille standard (défaut). 'sm': plus compact (padding/police réduits) */
+  size = input<PillButtonSize>('md');
 
   /** Disables interaction and dims the button */
   disabled = input(false);
