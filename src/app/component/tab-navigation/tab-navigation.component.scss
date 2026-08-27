@@ -1,7 +1,7 @@
 :host {
-  --tn-color-inactive: #9CA0A6;
-  --tn-color-active: #1E7A5F;
-  --tn-bg: #FFFEFB;
+  --tn-color-inactive: #9ca0a6;
+  --tn-color-active: #1e7a5f;
+  --tn-bg: #fffefb;
 }
 
 .tab-navigation {
@@ -33,7 +33,7 @@
     width: 26px;
     height: 26px;
 
-    svg {
+    ion-icon {
       width: 24px;
       height: 24px;
     }

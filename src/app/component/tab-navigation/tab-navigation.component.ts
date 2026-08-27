@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, input, output } from '@angular/core';
+import { IonIcon } from '@ionic/angular';
 
 export interface TabItem {
   id: string;
@@ -9,7 +10,7 @@ export interface TabItem {
 @Component({
   selector: 'app-tab-navigation',
   standalone: true,
-  imports: [CommonModule],
+  imports: [IonIcon, CommonModule],
   templateUrl: './tab-navigation.component.html',
   styleUrls: ['./tab-navigation.component.scss'],
 })
