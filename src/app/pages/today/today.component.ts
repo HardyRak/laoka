@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { IonContent } from '@ionic/angular';
 import { PageHeaderComponent } from '../../component/page-header/page-header.component';
 import { DishOfDayCardComponent } from '../../component/dish-of-day-card/dish-of-day-card.component';
@@ -10,6 +10,7 @@ import { MealListItemComponent } from '../../component/meal-list-item/meal-list-
 import { AlertBannerComponent } from '../../component/alert-banner/alert-banner.component';
 import { DisclaimerComponent } from '../../component/disclaimer/disclaimer.component';
 import { TabNavigationService } from '../../services/tab-navigation.service';
+import { DishDetailModalComponent } from '../../component-container/dish-detail-modal/dish-detail-modal.component';
 
 @Component({
   selector: 'app-today',
@@ -23,6 +24,7 @@ import { TabNavigationService } from '../../services/tab-navigation.service';
     NextMenusSectionComponent,
     MealListItemComponent,
     DisclaimerComponent,
+    DishDetailModalComponent,
   ],
 })
 export class TodayComponent implements OnInit {
@@ -31,6 +33,12 @@ export class TodayComponent implements OnInit {
   nutrition = nutrition;
 
   nextMenus = sideDishes.slice(0, 3);
+
+  @ViewChild('dishModal') dishModal!: DishDetailModalComponent;
+
+  onDayClick(day: number) {
+    this.dishModal.present();
+  }
 
   constructor() {}
 

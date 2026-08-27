@@ -29,6 +29,7 @@
           [iconBg]="meal.emojy"
           [title]="meal.name"
           [subtitle]="'jeu. 27'"
+          (itemClicked)="onDayClick(1)"
         >
         </app-meal-list-item>
       }
@@ -38,3 +39,4 @@
     ></app-disclaimer>
   </div>
 </ion-content>
+<app-dish-detail-modal #dishModal></app-dish-detail-modal>
