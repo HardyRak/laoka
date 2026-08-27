@@ -50,6 +50,10 @@
   transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease,
     box-shadow 0.15s ease;
 
+  &--auto-width {
+    width: auto;
+  }
+
   &:hover:not(:disabled) {
     background: var(--btn-bg-hover);
   }

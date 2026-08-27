@@ -1,9 +1,22 @@
 <button
   type="button"
   class="pill-btn"
+  [class.pill-btn--auto-width]="!fullWidth()"
   [disabled]="disabled()"
   (click)="onClick()"
 >
+  @if (icon() !== 'none' && iconPosition() === 'leading') {
+    <ng-container [ngTemplateOutlet]="iconTpl"></ng-container>
+  }
+
+  <span class="pill-btn__label">{{ label() }}</span>
+
+  @if (icon() !== 'none' && iconPosition() === 'trailing') {
+    <ng-container [ngTemplateOutlet]="iconTpl"></ng-container>
+  }
+</button>
+
+<ng-template #iconTpl>
   @switch (icon()) {
     @case ('check') {
       <svg
@@ -64,6 +77,24 @@
         />
       </svg>
     }
+    @case ('arrow-right') {
+      <svg
+        class="pill-btn__icon"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          d="M5 12h14M13 6l6 6-6 6"
+          stroke="currentColor"
+          stroke-width="2.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    }
   }
-  <span class="pill-btn__label">{{ label() }}</span>
-</button>
+</ng-template>
