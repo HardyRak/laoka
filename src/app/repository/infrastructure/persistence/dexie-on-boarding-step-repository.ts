@@ -2,6 +2,8 @@ import { inject, Injectable } from '@angular/core';
 import { OnBoardingStep } from '../../../database/schema/onboarding-step.schema';
 import { OnBoardingStepRepository } from '../../port/on-boarding-step-repository.port';
 import { AppDatabase } from '../../../database/database';
+import { from, Observable } from 'rxjs';
+import { liveQuery } from 'dexie';
 
 @Injectable()
 export class DexieOnBoardingStepRepository implements OnBoardingStepRepository {
@@ -21,5 +23,11 @@ export class DexieOnBoardingStepRepository implements OnBoardingStepRepository {
         throw new Error(`Step with stepNumber ${stepNumber} not found`);
       }
     });
+  }
+
+  getLiveStep(): Observable<OnBoardingStep | undefined> {
+    return from(
+      liveQuery(() => this.db.onBoardingSteps.orderBy('stepNumber').first()),
+    );
   }
 }

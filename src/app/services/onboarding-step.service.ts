@@ -1,6 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { OnBoardingStep } from '../database/schema/onboarding-step.schema';
 import { OnBoardingStepRepository } from '../repository/port/on-boarding-step-repository.port';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -14,5 +15,9 @@ export class OnBoardingStepService {
 
   saveStep(step: OnBoardingStep): Promise<number> {
     return this.onboardingStepRepository.saveStep(step);
+  }
+
+  liveStep(): Observable<OnBoardingStep | undefined> {
+    return this.onboardingStepRepository.getLiveStep();
   }
 }
