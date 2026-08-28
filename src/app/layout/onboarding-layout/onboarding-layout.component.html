@@ -9,12 +9,30 @@
     <ion-router-outlet />
   </div>
 
-  <app-wizard-footer
-    [showBack]="true"
-    continueLabel="Continuer"
-    continueIcon="arrow-right"
-    (continueClicked)="onContinueClicked()"
-    (backClicked)="onBackClicked()"
-  >
-  </app-wizard-footer>
+  @if (store.step().stepNumber === 1) {
+    <app-wizard-footer
+      [showBack]="false"
+      continueLabel="Continuer"
+      continueIcon="arrow-right"
+      (continueClicked)="onContinueClicked()"
+    >
+    </app-wizard-footer>
+  } @else if (store.step().stepNumber === store.step().totalSteps) {
+    <app-wizard-footer
+      [showBack]="true"
+      continueLabel="Terminer"
+      (continueClicked)="onContinueClicked()"
+      (backClicked)="onBackClicked()"
+    >
+    </app-wizard-footer>
+  } @else {
+    <app-wizard-footer
+      [showBack]="true"
+      continueLabel="Continuer"
+      continueIcon="arrow-right"
+      (continueClicked)="onContinueClicked()"
+      (backClicked)="onBackClicked()"
+    >
+    </app-wizard-footer>
+  }
 </div>
