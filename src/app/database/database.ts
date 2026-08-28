@@ -6,12 +6,12 @@ import { OnBoardingStep } from './schema/onboarding-step.schema';
   providedIn: 'root',
 })
 export class AppDatabase extends Dexie {
-  OnBoardingSteps!: Table<OnBoardingStep, number>;
+  onBoardingSteps!: Table<OnBoardingStep, number>;
   constructor() {
-    super('MyAppDatabase');
+    super('AppDatabase');
 
     this.version(1).stores({
-      steps: 'stepNumber',
+      onBoardingSteps: 'stepNumber',
     });
   }
 }
