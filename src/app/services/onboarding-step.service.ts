@@ -11,4 +11,8 @@ export class OnBoardingStepService {
   getStep(): Promise<OnBoardingStep | undefined> {
     return this.onboardingStepRepository.getStep();
   }
+
+  saveStep(step: OnBoardingStep): Promise<number> {
+    return this.onboardingStepRepository.saveStep(step);
+  }
 }

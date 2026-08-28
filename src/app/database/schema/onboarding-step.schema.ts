@@ -1,4 +1,4 @@
 export interface OnBoardingStep {
   stepNumber: number;
-  isFirstTime: 1 | 0;
+  isFinished: 1 | 0;
 }

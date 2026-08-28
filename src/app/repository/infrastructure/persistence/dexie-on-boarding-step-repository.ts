@@ -8,15 +8,15 @@ export class DexieOnBoardingStepRepository implements OnBoardingStepRepository {
   private readonly db = inject(AppDatabase);
 
   saveStep(step: OnBoardingStep): Promise<number> {
-    return this.db.OnBoardingSteps.put(step);
+    return this.db.onBoardingSteps.put(step);
   }
 
   getStep(): Promise<OnBoardingStep | undefined> {
-    return this.db.OnBoardingSteps.orderBy('stepNumber').first();
+    return this.db.onBoardingSteps.orderBy('stepNumber').first();
   }
 
   patchStep(stepNumber: number, data: Partial<OnBoardingStep>): Promise<void> {
-    return this.db.OnBoardingSteps.update(stepNumber, data).then((updated) => {
+    return this.db.onBoardingSteps.update(stepNumber, data).then((updated) => {
       if (updated === 0) {
         throw new Error(`Step with stepNumber ${stepNumber} not found`);
       }
