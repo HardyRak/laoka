@@ -10,6 +10,8 @@ import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular';
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
+import { OnBoardingStepRepository } from './app/repository/port/on-boarding-step-repository.port';
+import { DexieOnBoardingStepRepository } from './app/repository/infrastructure/persistence/dexie-on-boarding-step-repository';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -20,5 +22,9 @@ bootstrapApplication(AppComponent, {
       withPreloading(PreloadAllModules),
       withComponentInputBinding(),
     ),
+    {
+      provide: OnBoardingStepRepository,
+      useClass: DexieOnBoardingStepRepository,
+    },
   ],
 });

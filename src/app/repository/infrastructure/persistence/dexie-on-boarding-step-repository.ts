@@ -11,8 +11,8 @@ export class DexieOnBoardingStepRepository implements OnBoardingStepRepository {
     return this.db.OnBoardingSteps.put(step);
   }
 
-  getStep(stepNumber: number): Promise<OnBoardingStep | undefined> {
-    return this.db.OnBoardingSteps.get(stepNumber);
+  getStep(): Promise<OnBoardingStep | undefined> {
+    return this.db.OnBoardingSteps.orderBy('stepNumber').first();
   }
 
   patchStep(stepNumber: number, data: Partial<OnBoardingStep>): Promise<void> {
