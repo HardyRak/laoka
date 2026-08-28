@@ -2,7 +2,7 @@
   @if (!store.loading()) {
     <app-wizard-header
       [currentStep]="store.step().stepNumber"
-      [totalSteps]="4"
+      [totalSteps]="store.step().totalSteps"
     ></app-wizard-header>
   }
   <div class="main-layout__content">
@@ -13,6 +13,8 @@
     [showBack]="true"
     continueLabel="Continuer"
     continueIcon="arrow-right"
+    (continueClicked)="onContinueClicked()"
+    (backClicked)="onBackClicked()"
   >
   </app-wizard-footer>
 </div>

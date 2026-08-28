@@ -17,6 +17,10 @@ export class OnBoardingStepService {
     return this.onboardingStepRepository.saveStep(step);
   }
 
+  patchStep(stepNumber: number, data: Partial<OnBoardingStep>): Promise<void> {
+    return this.onboardingStepRepository.patchStep(stepNumber, data);
+  }
+
   liveStep(): Observable<OnBoardingStep | undefined> {
     return this.onboardingStepRepository.getLiveStep();
   }

@@ -23,7 +23,11 @@ export class AppComponent {
 
     if (step === undefined) {
       this.router.navigate(['/onboarding/1']);
-      this.onBoardingStepService.saveStep({ stepNumber: 1, isFinished: 0 });
+      this.onBoardingStepService.saveStep({
+        stepNumber: 1,
+        isFinished: 0,
+        totalSteps: 4,
+      });
     } else if (step.isFinished === 0) {
       this.router.navigate([`/onboarding/${step.stepNumber}`]);
     } else {

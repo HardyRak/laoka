@@ -18,7 +18,7 @@ type OnBoardingState = {
 };
 
 const initialState: OnBoardingState = {
-  step: { stepNumber: 1, isFinished: 0 },
+  step: { stepNumber: 1, isFinished: 0, totalSteps: 4 },
   loading: true,
 };
 
@@ -33,8 +33,8 @@ export const OnBoardingStepStore = signalStore(
       ),
     ),
 
-    async saveStep(step: OnBoardingStep) {
-      await service.saveStep(step);
+    async patchStep(stepNumber: number, step: OnBoardingStep) {
+      await service.patchStep(stepNumber, step);
       // pas besoin de patchState manuel : liveQuery va émettre automatiquement
     },
   })),
