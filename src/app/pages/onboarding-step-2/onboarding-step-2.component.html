@@ -5,7 +5,7 @@
       title="Avez-vous des allergies ?"
       description="Les recettes concernées seront automatiquement écartées."
     ></app-page-header>
-    <div class="food-content">
+    <div class="allergies-content">
       @for (item of allergies; track $index) {
         <app-option-card
           [emoji]="item.emojy"
