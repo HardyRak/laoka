@@ -1,0 +1,27 @@
+<div class="profile-summary">
+  <div class="profile-summary__avatar-row">
+    <div class="profile-summary__avatar">{{ initial() }}</div>
+  </div>
+
+  <div class="profile-summary__row profile-summary__row--name">
+    <span class="profile-summary__label">Votre prénom</span>
+    <span class="profile-summary__name">{{ name() }}</span>
+  </div>
+
+  <div class="profile-summary__row">
+    <span class="profile-summary__label">Accompagnements écartés</span>
+    <span class="profile-summary__value">{{ excludedCount() }}</span>
+  </div>
+
+  <div class="profile-summary__row">
+    <span class="profile-summary__label">Allergies déclarées</span>
+    <span class="profile-summary__value">{{ allergiesCount() }}</span>
+  </div>
+
+  @if (constraint()) {
+    <div class="profile-summary__row profile-summary__row--last">
+      <span class="profile-summary__label">Contrainte</span>
+      <span class="profile-summary__value profile-summary__value--accent">{{ constraint() }}</span>
+    </div>
+  }
+</div>
