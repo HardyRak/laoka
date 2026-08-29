@@ -1,0 +1,28 @@
+<button
+  type="button"
+  class="option-card"
+  [class.option-card--danger]="selected() && tone() === 'danger'"
+  [class.option-card--success]="selected() && tone() === 'success'"
+  (click)="onClick()"
+>
+  <span class="option-card__icon">{{ emoji() }}</span>
+
+  <span class="option-card__text">
+    <span class="option-card__label">{{ label() }}</span>
+    <span class="option-card__nutrition">{{ nutrition() }}</span>
+  </span>
+
+  @if (selected()) {
+    <svg
+      class="option-card__check"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+  }
+</button>

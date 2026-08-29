@@ -4,5 +4,14 @@
       eyebrow="Vos goûts"
       title="Que laissez-vous au bord de l’assiette ?"
       description="Sélectionnez les accompagnements que vous ne voulez jamais voir proposés."
-    ></app-page-header></div
+    />
+    <div class="food-content">
+      @for (item of sideDish; track $index) {
+        <app-food-option-card
+          [emoji]="item.emojy"
+          [label]="item.name"
+          [nutrition]="'proteine'"
+        ></app-food-option-card>
+      }
+    </div></div
 ></ion-content>
