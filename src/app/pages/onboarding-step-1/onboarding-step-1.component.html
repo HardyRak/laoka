@@ -7,11 +7,11 @@
     />
     <div class="food-content">
       @for (item of sideDish; track $index) {
-        <app-food-option-card
+        <app-option-card
           [emoji]="item.emojy"
           [label]="item.name"
           [nutrition]="'proteine'"
-        ></app-food-option-card>
+        ></app-option-card>
       }
     </div></div
 ></ion-content>

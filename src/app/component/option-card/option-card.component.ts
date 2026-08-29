@@ -1,31 +1,31 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 
-export type FoodOptionTone = 'danger' | 'success';
+export type OptionCardTone = 'danger' | 'success';
 
 @Component({
-  selector: 'app-food-option-card',
+  selector: 'app-option-card',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './food-option-card.component.html',
-  styleUrls: ['./food-option-card.component.scss'],
+  templateUrl: './option-card.component.html',
+  styleUrls: ['./option-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FoodOptionCardComponent {
+export class OptionCardComponent {
   /** Emoji affiché dans la pastille à gauche */
   emoji = input.required<string>();
 
-  /** Nom de l'aliment */
+  /** Nom de l'option */
   label = input.required<string>();
 
-  /** Élément nutritionnel affiché sous le label, ex: "Riche en fibres" */
+  /** Élément nutritionnel ou description affiché sous le label */
   nutrition = input.required<string>();
 
   /** État sélectionné (coché) ou non */
   selected = input<boolean>(false);
 
   /** Couleur du variant sélectionné : rouge (non aimé) ou vert (allergie) */
-  tone = input<FoodOptionTone>('danger');
+  tone = input<OptionCardTone>('danger');
 
   /** Émis au clic avec le nouvel état */
   toggle = output<boolean>();
