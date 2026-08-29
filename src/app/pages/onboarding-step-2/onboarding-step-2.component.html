@@ -4,5 +4,15 @@
       eyebrow="Votre sécurité"
       title="Avez-vous des allergies ?"
       description="Les recettes concernées seront automatiquement écartées."
-    ></app-page-header></div
+    ></app-page-header>
+    <div class="food-content">
+      @for (item of allergies; track $index) {
+        <app-option-card
+          [emoji]="item.emojy"
+          [label]="item.name"
+          [nutrition]="'Allergie normal'"
+          [tone]="'success'"
+        ></app-option-card>
+      }
+    </div></div
 ></ion-content>

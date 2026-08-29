@@ -4,5 +4,15 @@
       eyebrow="Votre équilibre"
       title="Une contrainte de santé ?"
       description="Ce choix ajuste la sélection sans remplacer un avis médical."
-    ></app-page-header></div
+    ></app-page-header>
+    <div class="food-content">
+      @for (item of healthConstraints; track $index) {
+        <app-option-card
+          [emoji]="item.emojy"
+          [label]="item.name"
+          [nutrition]="item.description"
+          [tone]="'neutral'"
+        ></app-option-card>
+      }
+    </div></div
 ></ion-content>

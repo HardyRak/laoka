@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 
-export type OptionCardTone = 'danger' | 'success';
+export type OptionCardTone = 'danger' | 'success' | 'neutral';
 
 @Component({
   selector: 'app-option-card',
@@ -24,7 +24,7 @@ export class OptionCardComponent {
   /** État sélectionné (coché) ou non */
   selected = input<boolean>(false);
 
-  /** Couleur du variant sélectionné : rouge (non aimé) ou vert (allergie) */
+  /** Couleur du variant sélectionné : rouge (non aimé), vert (allergie) ou neutre (pas de teinte, juste le check) */
   tone = input<OptionCardTone>('danger');
 
   /** Émis au clic avec le nouvel état */

@@ -3,6 +3,7 @@
   class="option-card"
   [class.option-card--danger]="selected() && tone() === 'danger'"
   [class.option-card--success]="selected() && tone() === 'success'"
+  [class.option-card--neutral]="selected() && tone() === 'neutral'"
   (click)="onClick()"
 >
   <span class="option-card__icon">{{ emoji() }}</span>
